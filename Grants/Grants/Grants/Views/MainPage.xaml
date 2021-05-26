@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Grants.MainPage">
+
+    <StackLayout>
+        <Label Text="Вы не зарегистрировались." BackgroundColor="Yellow" HorizontalOptions="Fill" HorizontalTextAlignment="Center"/>
+        
+        <Frame BorderColor="Gray" BackgroundColor="#e1e1e1" CornerRadius="8">
+            <StackLayout>
+                <BoxView Color="Gray"  HeightRequest="2" HorizontalOptions="Fill" />
+                <BoxView Color="Gray"  HeightRequest="2" HorizontalOptions="Fill" />
+                <Label Text="text should be replaced with parser" FontSize="Large" HorizontalOptions="Center"  />
+            </StackLayout>
+        </Frame>
+        <Button Text="parse" Clicked="Button_Clicked"/>
+    </StackLayout>
+    
+</ContentPage>

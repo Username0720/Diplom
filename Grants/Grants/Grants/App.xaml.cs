@@ -1,6 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Grants.Views;
 
 namespace Grants
 {
@@ -9,7 +10,6 @@ namespace Grants
         public App()
         {
             InitializeComponent();
-
             MainPage = new MainPage();
         }
 

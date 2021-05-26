@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Grants.Views.SingInUp">
+    <StackLayout Margin="5, 5, 5, 5">
+        <StackLayout>
+            <Label Text="Добро пожаловать" FontSize="24"/>
+            <Label Text="Пожалуйста, войдите в систему" FontSize="15"/>
+        </StackLayout>
+        <Entry x:Name="Login" Placeholder="login"/>
+        <Entry x:Name="Password" Placeholder="password" IsPassword="True"/>
+        <Button Text="Войти" Clicked="Button_a_Clicked" FontSize="15"/>
+        <StackLayout>
+            <Label Text="Еще нет учетной записи?" FontSize="24"/>
+            <Label Text="Создайте новую учетную запись" FontSize="15"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
