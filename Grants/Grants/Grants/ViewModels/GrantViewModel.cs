@@ -10,34 +10,59 @@ namespace Grants.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public Data Data { get; private set; }
+        public Data_ Data_ { get; private set; }
 
         public GrantViewModel()
         {
-            Data = new Data();
+            Data_ = new Data_();
         }
         
-        public string Text
+        public string Konkurs
         {
-            get { return Data.text; }
+            get { return Data_.konkurs_name; }
             set
             {
-                if (Data.text != value)
+                if (Data_.konkurs_name != value)
                 {
-                    Data.text = value;
+                    Data_.konkurs_name = value;
                     OnPropertyChanged("Name");
                 }
             }
         }
         public string Href
         {
-            get { return Data.ahref; }
+            get { return Data_.href; }
             set
             {
-                if (Data.ahref != value)
+                if (Data_.href != value)
                 {
-                    Data.ahref = value;
-                    OnPropertyChanged("Email");
+                    Data_.href = value;
+                    OnPropertyChanged("href");
+                }
+            }
+        }
+
+        public string Organization
+        {
+            get { return Data_.organization; }
+            set
+            {
+                if (Data_.konkurs_name != value)
+                {
+                    Data_.konkurs_name = value;
+                    OnPropertyChanged("Name");
+                }
+            }
+        }
+        public string Location_
+        {
+            get { return Data_.location_; }
+            set
+            {
+                if (Data_.location_ != value)
+                {
+                    Data_.location_ = value;
+                    OnPropertyChanged("location");
                 }
             }
         }
@@ -46,8 +71,10 @@ namespace Grants.ViewModels
         {
             get
             {
-                return ((!string.IsNullOrEmpty(Text.Trim())) ||
-                    (!string.IsNullOrEmpty(Href.Trim())));
+                return ((!string.IsNullOrEmpty(Konkurs.Trim())) ||
+                    (!string.IsNullOrEmpty(Href.Trim())) ||
+                    (!string.IsNullOrEmpty(Organization.Trim())) ||
+                    (!string.IsNullOrEmpty(Location_.Trim())));
             }
         }
         protected void OnPropertyChanged(string propName)

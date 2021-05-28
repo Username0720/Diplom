@@ -35,7 +35,7 @@ namespace Grants.ViewModels
                     GrantViewModel tempGrant = value;
                     selectedGrant = null;
                     OnPropertyChanged("SelectedFriend");
-                    Navigation.PushAsync(new GrantPage(tempGrant));
+                    Navigation.PushAsync(new GrantPage());
                 }
             }
         }

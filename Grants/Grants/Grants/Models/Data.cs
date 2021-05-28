@@ -1,20 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace Grants.Models
 {
-    public class Data
+    public class Data_
     {
-        public int id_data { get; set; }
-        public string ahref { get; set; }
-        public string maintext { get; set; }
-        public string text { get; set; }
-        public string begin_date { get; set; }
-        public string end_date { get; set; }
-        public string begin_request_date { get; set; }
-        public string end_request_date { get; set; }
-        public string status { get; set; }
-        public string location { get; set; }
+        [Key]
+        public int id_d { get; set; }
+        public string konkurs_name { get; set; }
+        public string href { get; set; }
+        public string organization { get; set; }
+        public string location_ { get; set; }
     }
 }

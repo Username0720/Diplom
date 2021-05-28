@@ -13,12 +13,11 @@ namespace Grants.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GrantPage : ContentPage
     {
-        public GrantViewModel ViewModel { get; private set; }
-        public GrantPage(GrantViewModel vm)
+        string dbPath;
+        public GrantPage()
         {
             InitializeComponent();
-            ViewModel = vm;
-            this.BindingContext = ViewModel;
+            dbPath = DependencyService.Get<IPath>().GetDatabasePath(App.DBFILENAME);
         }
     }
 }

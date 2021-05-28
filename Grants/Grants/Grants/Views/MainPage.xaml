@@ -5,7 +5,7 @@
 
     <StackLayout>
         <Label Text="Вы не зарегистрировались." BackgroundColor="Yellow" HorizontalOptions="Fill" HorizontalTextAlignment="Center"/>
-        
+
         <Frame BorderColor="Gray" BackgroundColor="#e1e1e1" CornerRadius="8">
             <StackLayout>
                 <BoxView Color="Gray"  HeightRequest="2" HorizontalOptions="Fill" />
@@ -13,7 +13,19 @@
                 <Label Text="text should be replaced with parser" FontSize="Large" HorizontalOptions="Center"  />
             </StackLayout>
         </Frame>
-        <Button Text="parse" Clicked="Button_Clicked"/>
+        <ListView x:Name="GrantsList" ItemSelected="OnItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Konkurs}" FontSize="Medium" />
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
     
 </ContentPage>

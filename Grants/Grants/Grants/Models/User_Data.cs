@@ -8,6 +8,6 @@ namespace Grants.Models
     {
         public int id_user_data { get; set; }
         public virtual User User { get; set; }
-        public virtual Data Data { get; set; }
+        public virtual Data_ Data_ { get; set; }
     }
 }
