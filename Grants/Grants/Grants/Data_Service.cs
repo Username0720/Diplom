@@ -1,0 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Net;
+using System.Net.Http;
+using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.Threading.Tasks;
+
+namespace Grants
+{
+    class Data_Service
+    {
+        const string Url = "http://192.168.1.18:3000/api/friends/"; 
+        JsonSerializerOptions options = new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true,
+        };
+        // настройка клиента
+        private HttpClient GetClient()
+        {
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Add("Accept", "application/json");
+            return client;
+        }
+
+        public async Task<IEnumerable<Data_>> Get()
+        {
+            HttpClient client = GetClient();
+            string result = await client.GetStringAsync(Url);
+            return JsonSerializer.Deserialize<IEnumerable<Data_>>(result, options);
+        }
+    }
+}

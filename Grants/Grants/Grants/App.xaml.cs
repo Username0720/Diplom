@@ -2,20 +2,16 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using System.Linq;
-using Grants.Models;
+using System.Reflection;
+using System.IO;
 
 namespace Grants
 {
     public partial class App : Application
     {
-        public const string DBFILENAME = "test2.db";
         public App()
         {
             InitializeComponent();
-            string dbPath = DependencyService.Get<IPath>().GetDatabasePath(DBFILENAME);
-            using (var db = new ApplicationContext(dbPath))
-            {
-            }
             MainPage = new NavigationPage(new MainPage());
         }
 
