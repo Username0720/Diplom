@@ -79,15 +79,15 @@ namespace Grants
         {
             if (initialized == true) return;
             IsBusy = true;
-            IEnumerable<Data_> friends = await data_Service.Get();
+            IEnumerable<Data_> data_s = await data_Service.Get();
 
             // очищаем список
-            //Friends.Clear();
+            //Data_s.Clear();
             while (Data_s.Any())
                 Data_s.RemoveAt(Data_s.Count - 1);
 
             // добавляем загруженные данные
-            foreach (Data_ f in friends)
+            foreach (Data_ f in data_s)
                 Data_s.Add(f);
             IsBusy = false;
             initialized = true;

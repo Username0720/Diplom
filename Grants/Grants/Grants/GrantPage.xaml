@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Grants.Views.GrantPage">
+             x:Class="Grants.GrantPage">
     <ContentPage.Content>
         <StackLayout Margin="5, 5, 5, 5">
             <Label Text="{Binding Path=Model.konkurs_name}" />
@@ -20,7 +20,7 @@
             </StackLayout>
             <Label Text="{Binding Path=Model.organization}" />
             <Label x:Name="href_link" Text="{Binding Path=Model.href}" IsVisible="false"/>
-            <Button Text="Перейти" Clicked="Openlink"/>
+            <Button Text="Перейти" Clicked="Openlink" BindingContext="{Binding Path=Model.href}"/>
             <StackLayout Orientation="Horizontal">
                 <Button Text="Назад" Clicked="Cancel"/>
             </StackLayout>
